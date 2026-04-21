@@ -153,6 +153,10 @@ namespace HendrixCollege.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
+                    b.Property<int>("Age")
+                        .HasColumnType("INTEGER")
+                        .HasColumnName("Age");
+
                     b.Property<DateTime>("EnrollmentDate")
                         .HasColumnType("TEXT");
 

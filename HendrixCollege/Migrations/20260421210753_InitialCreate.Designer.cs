@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace HendrixCollege.Migrations
 {
     [DbContext(typeof(SchoolContext))]
-    [Migration("20260417150423_InitialCreate")]
+    [Migration("20260421210753_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />
@@ -65,6 +65,10 @@ namespace HendrixCollege.Migrations
 
                     b.Property<decimal>("Budget")
                         .HasColumnType("money");
+
+                    b.Property<Guid>("ConcurrencyToken")
+                        .IsConcurrencyToken()
+                        .HasColumnType("TEXT");
 
                     b.Property<int?>("InstructorID")
                         .HasColumnType("INTEGER");
@@ -151,6 +155,10 @@ namespace HendrixCollege.Migrations
                     b.Property<int>("ID")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
+
+                    b.Property<int>("Age")
+                        .HasColumnType("INTEGER")
+                        .HasColumnName("Age");
 
                     b.Property<DateTime>("EnrollmentDate")
                         .HasColumnType("TEXT");
